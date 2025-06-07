@@ -1,0 +1,77 @@
+neural-nexus/
+├── src/                          # Source code
+│   ├── index.ts                  # Main entry point
+│   ├── types/                    # Type definitions
+│   │   ├── index.ts              # Type exports
+│   │   ├── key.ts                # Key-related types
+│   │   ├── config.ts             # Configuration types
+│   │   └── adapter.ts            # Adapter interfaces
+│   ├── core/                     # Core functionality
+│   │   ├── keyManager.ts         # API key management
+│   │   ├── validator.ts          # Key validation
+│   │   └── rateLimiter.ts        # Rate limiting
+│   ├── db/                       # Database adapters
+│   │   ├── adapter.ts            # Base adapter interface
+│   │   ├── mongodb.ts            # MongoDB adapter
+│   │   ├── postgresql.ts         # PostgreSQL adapter
+│   │   └── redis.ts              # Redis adapter
+│   ├── http/                     # HTTP functionality
+│   │   ├── middleware.ts         # Express middleware
+│   │   ├── endpoints.ts          # API endpoints
+│   │   └── controllers.ts        # Request handlers
+│   ├── services/                 # Additional services
+│   │   ├── webhook.ts            # Webhook delivery
+│   │   ├── analytics.ts          # Usage tracking
+│   │   ├── vibeCheck.ts          # Anomaly detection
+│   │   ├── blockchain.ts         # Blockchain verification
+│   │   └── edge.ts               # Edge computing
+│   ├── utils/                    # Utility functions
+│   │   ├── crypto.ts             # Crypto helpers
+│   │   ├── validation.ts         # Input validation
+│   │   └── formatting.ts         # Response formatting
+│   └── config/                   # Configuration
+│       ├── defaults.ts           # Default settings
+│       └── schema.ts             # Config validation
+├── dist/                         # Compiled code (gitignored)
+├── test/                         # Tests
+│   ├── unit/                     # Unit tests
+│   │   ├── core/                 # Core tests
+│   │   ├── db/                   # Database tests
+│   │   └── services/             # Service tests
+│   ├── integration/              # Integration tests
+│   │   ├── api.test.ts           # API tests
+│   │   └── db.test.ts            # Database tests
+│   ├── e2e/                      # End-to-end tests
+│   │   └── workflow.test.ts      # Workflow tests
+│   └── mocks/                    # Test mocks
+├── examples/                     # Example usage
+│   ├── basic/                    # Basic usage
+│   ├── advanced/                 # Advanced features
+│   └── frameworks/               # Framework integrations
+├── docs/                         # Documentation
+│   ├── api/                      # API documentation
+│   ├── guides/                   # User guides
+│   └── diagrams/                 # Architecture diagrams
+├── scripts/                      # Build scripts
+│   ├── build.js                  # Build script
+│   └── publish.js                # Publish script
+├── sdk/                          # Mobile SDKs
+│   ├── ios/                      # iOS SDK
+│   ├── android/                  # Android SDK
+│   └── react-native/             # React Native SDK
+├── .github/                      # GitHub config
+│   ├── workflows/                # GitHub Actions
+│   │   ├── test.yml              # Test workflow
+│   │   └── publish.yml           # Publish workflow
+│   └── ISSUE_TEMPLATE/           # Issue templates
+├── .vscode/                      # VS Code settings
+├── .rules/                       # Project rules
+├── .gitignore                    # Git ignore file
+├── .npmignore                    # npm ignore file
+├── .eslintrc.json                # ESLint config
+├── .prettierrc                   # Prettier config
+├── jest.config.js                # Jest config
+├── tsconfig.json                 # TypeScript config
+├── package.json                  # Package metadata
+├── LICENSE                       # License file
+└── README.md                     # Documentation 

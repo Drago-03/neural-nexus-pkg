@@ -1,0 +1,13 @@
+This is a placeholder file for the assets directory. 
+The actual image assets should be placed here.
+
+Required assets:
+- logo.png - Neural Nexus logo
+- examples-banner.png - Banner for examples
+- sdk-generation.png - Illustration for SDK generation
+- contributing.gif - Animation for contributing section
+- ecosystem.png - Neural Nexus ecosystem integration diagram
+- code-demo.gif - Code demo animation for main README
+- examples-demo.gif - Example execution animation for examples README
+- downloads-chart.png - Package download statistics chart
+- performance-chart.png - Performance benchmarks visualization 

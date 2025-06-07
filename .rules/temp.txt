@@ -1,0 +1,252 @@
+# API Key Generation Backend - NPM Package Requirements
+
+## Package Info
+- Name: neural-nexus
+- Installation: `npm install neural-nexus`
+- Repository: https://github.com/Drago-03/neural-nexus-pkg.git
+
+## Core Features
+
+- Secure API key generation (UUID v4, random bytes + encoding, etc)
+- Key validation and verification
+- Key revocation/deletion
+- Expiration date handling for keys
+- Rate limiting for API requests
+- Usage tracking and analytics
+- Role-based access control (RBAC)
+- User authentication integration
+- Webhook support for key events
+
+## Database Integration
+
+- MongoDB connector (for NoSQL approach)
+- PostgreSQL/MySQL connector (for SQL approach)
+- Redis integration for caching and rate limiting
+- In-memory storage option for development/testing
+
+## Security Features
+
+- Key hashing and encryption
+- Environment variable based config
+- HTTPS enforcement
+- CORS configuration
+- Protection against brute force attacks
+- Rate limiting middleware
+- IP allowlisting/blocklisting
+
+## Package Structure
+
+- Core key generation module
+- Database adapters
+- Middleware components
+- Authentication helpers
+- Admin dashboard API endpoints
+- Usage analytics module
+
+## API Endpoints to Implement
+
+- POST /api/keys - Generate new API key
+- GET /api/keys - List all keys (with pagination)
+- GET /api/keys/:id - Get single key details
+- PUT /api/keys/:id - Update key (permissions, expiration)
+- DELETE /api/keys/:id - Revoke/delete key
+- GET /api/usage - Get usage statistics
+- POST /api/keys/validate - Validate key
+
+## Tech Stack
+
+- Node.js (v16+)
+- Express.js for API framework
+- Mongoose/Sequelize for DB interactions
+- bcrypt for hashing
+- jsonwebtoken for JWT handling
+- dotenv for environment configs
+- joi/zod for validation
+- winston for logging
+- jest for testing
+
+## Deployment
+
+- Docker container support
+- CI/CD pipeline config
+- Environment variable templates
+- Kubernetes deployment examples
+
+## Dev Experience
+
+- TypeScript support
+- ESLint + Prettier config
+- Comprehensive documentation
+- Interactive examples
+- OpenAPI/Swagger spec
+
+## AI Code Generation Prompts
+
+1. "Generate a secure API key generation function using crypto and base64 encoding that produces keys that are URL-safe"
+
+2. "Create a MongoDB schema for storing API keys with fields for owner, permissions, creation date, expiration date, and usage limits"
+
+3. "Implement a middleware function that validates API keys from request headers and rejects unauthorized requests"
+
+4. "Build a rate limiting function that tracks API usage by key and enforces custom limits per key"
+
+5. "Design a function to handle key rotation that creates a new key while keeping the old one valid for a grace period"
+
+6. "Create a comprehensive test suite for the API key validation system including unit and integration tests"
+
+7. "Implement a webhook system that triggers on key events (creation, expiration, rate limit exceeded)"
+
+8. "Build a TypeScript interface for the API key object with all required properties and methods"
+
+9. "Create a dashboard API endpoint that returns usage statistics for a given API key"
+
+10. "Implement a secure key revocation system that immediately invalidates compromised keys"
+
+## Advanced Features
+
+- Multi-tenancy support
+- Custom key formats and prefixes
+- Auto-rotation of keys on schedule
+- Granular permission system
+- Audit logging for all key operations
+- Analytics dashboards
+- Export/import functionality
+- Batch operations for key management
+- Quota management system
+- Intelligent anomaly detection
+
+## Additional Advanced Features
+
+- Key versioning system with graceful deprecation
+- Smart rate limiting with ML-based adaptive limits
+- Blockchain verification for high-security applications
+- Federated key management across organizations
+- AI-powered security with behavioral biometrics
+- Mobile SDK integration (iOS and Android)
+- Edge computing support with distributed validation
+- Identity provider integration (Auth0, Okta, etc.)
+- Geolocation-based access restrictions
+- Custom branding for API keys
+- Enterprise SSO integration
+- Real-time collaborative key management
+- Custom key lifecycle workflows
+- Compliance reporting (GDPR, HIPAA, SOC2, etc.)
+- Quantum-resistant encryption options
+
+## Gen-Z Style Features
+
+- Vibe Check feature for monitoring usage patterns
+- No Cap verification for enhanced security
+- Low-key mode for reduced logging
+- Sus detection for anomalous behavior
+- Lit analytics dashboard
+- Flex mode for extended functionality
+- Bet callbacks for success tracking
+
+## Platform Integrations
+
+- AWS Lambda support
+- Vercel Edge Functions compatibility
+- Cloudflare Workers integration
+- GitHub Actions workflows
+- CI/CD pipeline templates
+- Kubernetes deployment manifests
+- Terraform modules
+
+## Mobile SDK Support
+
+- iOS Swift native SDK
+- Android Kotlin native SDK
+- React Native integration
+- Flutter package
+- Xamarin bindings
+
+## Installation Requirements
+
+- Node.js v16+
+- npm/yarn
+- Database (MongoDB/PostgreSQL/MySQL/Redis)
+- Environment config setup
+
+## Dependencies to Include
+
+```json
+{
+  "dependencies": {
+    "express": "^4.18.2",
+    "mongoose": "^7.5.0", 
+    "crypto": "^1.0.1",
+    "jsonwebtoken": "^9.0.1",
+    "bcrypt": "^5.1.0",
+    "dotenv": "^16.3.1",
+    "joi": "^17.9.2",
+    "winston": "^3.10.0",
+    "redis": "^4.6.7",
+    "express-rate-limit": "^6.9.0",
+    "cors": "^2.8.5",
+    "helmet": "^7.0.0",
+    "uuid": "^9.0.0",
+    "zod": "^3.21.4"
+  },
+  "devDependencies": {
+    "typescript": "^5.1.6",
+    "jest": "^29.6.2",
+    "supertest": "^6.3.3",
+    "eslint": "^8.46.0",
+    "prettier": "^3.0.1",
+    "nodemon": "^3.0.1",
+    "ts-node": "^10.9.1",
+    "@types/node": "^20.4.5",
+    "@types/express": "^4.17.17"
+  }
+}
+```
+
+## Example Usage (for Documentation)
+
+```javascript
+// Import the package
+const neuralNexus = require('neural-nexus');
+
+// Initialize with config
+const keyManager = neuralNexus.init({
+  database: {
+    type: 'mongodb',
+    uri: process.env.MONGO_URI
+  },
+  keySettings: {
+    defaultExpiration: '30d',
+    prefix: 'nxs_',
+    keyLength: 32
+  }
+});
+
+// Generate a new key
+const newKey = await keyManager.generateKey({
+  userId: '123456',
+  permissions: ['read', 'write'],
+  rateLimit: {
+    requests: 100,
+    interval: '1h'
+  }
+});
+
+// Validate a key
+const isValid = await keyManager.validateKey('nxs_abcd1234...');
+
+// Middleware usage
+app.use('/api', neuralNexus.middleware());
+```
+
+## Implementation Steps
+
+1. Set up project structure with TypeScript
+2. Implement core key generation logic
+3. Create database adapters for different backends
+4. Build middleware for Express.js
+5. Implement validation and security features
+6. Add analytics and tracking
+7. Create admin API endpoints
+8. Write comprehensive tests
+9. Document with JSDoc and README
+10. Set up CI/CD pipeline for npm publishing 

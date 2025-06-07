@@ -1,0 +1,32 @@
+█████████████████████████████████████████████████████████████████
+█                                                           █
+█              NEURAL NEXUS CODE DEMO                       █
+█                                                           █
+█  ┌─────────────────────────────────────────────────┐     █
+█  │                                                 │     █
+█  │ // Import the Neural Nexus package              │     █
+█  │ import { NeuralNexus } from 'neural-nexus-pkg'; │     █
+█  │                                                 │     █
+█  │ // Initialize the client                        │     █
+█  │ const client = new NeuralNexus({                │     █
+█  │   apiKey: 'your-api-key',                       │     █
+█  │   apiEndpoint: 'https://api.neuralnexus.ai'     │     █
+█  │ });                                             │     █
+█  │                                                 │     █
+█  │ // Make a request to the API                    │     █
+█  │ async function generateText() {                 │     █
+█  │   const response = await client.completion({    │     █
+█  │     prompt: 'Hello, Neural Nexus!',             │     █
+█  │     maxTokens: 100,                             │     █
+█  │     temperature: 0.7                            │     █
+█  │   });                                           │     █
+█  │                                                 │     █
+█  │   console.log(response.text);                   │     █
+█  │ }                                               │     █
+█  │                                                 │     █
+█  │ // Call the function                            │     █
+█  │ generateText();                                 │     █
+█  │                                                 │     █
+█  └─────────────────────────────────────────────────┘     █
+█                                                           █
+█████████████████████████████████████████████████████████████ 
