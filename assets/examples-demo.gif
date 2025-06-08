@@ -1,1 +1,33 @@
- 
+█████████████████████████████████████████████████████████████████
+█                                                           █
+█              NEURAL NEXUS EXAMPLES DEMO                   █
+█                                                           █
+█  ┌─────────────────────────────────────────────────┐     █
+█  │                                                 │     █
+█  │ $ npm run example:basic                         │     █
+█  │                                                 │     █
+█  │ > neural-nexus-pkg@1.2.0 example:basic         │     █
+█  │ > ts-node examples/basic-usage.ts              │     █
+█  │                                                 │     █
+█  │ Creating Neural Nexus client...                 │     █
+█  │ ✓ Client initialized successfully!              │     █
+█  │                                                 │     █
+█  │ Sending request to Neural Nexus API...          │     █
+█  │ ✓ Response received!                            │     █
+█  │                                                 │     █
+█  │ Response data:                                  │     █
+█  │ {                                               │     █
+█  │   "model": "neural-nexus-v1",                   │     █
+█  │   "results": [                                  │     █
+█  │     {                                           │     █
+█  │       "text": "This is a sample response...",   │     █
+█  │       "confidence": 0.95                        │     █
+█  │     }                                           │     █
+█  │   ]                                             │     █
+█  │ }                                               │     █
+█  │                                                 │     █
+█  │ Example completed successfully!                 │     █
+█  │                                                 │     █
+█  └─────────────────────────────────────────────────┘     █
+█                                                           █
+█████████████████████████████████████████████████████████████ 
